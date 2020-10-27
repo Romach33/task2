@@ -42,10 +42,8 @@ public class Main {
     }
 
     public static boolean checkExistenceOfACircle(double a, double b, double c) {
-        if (a + b > c) {
-            if (a + c > b)
-                if (b + c > a)
-                    return true;
+        if (a + b > c && a + c > b && b + c > a) {
+            return true;
         }
 
         return false;
