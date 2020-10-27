@@ -1,6 +1,5 @@
 package com.company.number2;
 
-import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
@@ -8,42 +7,39 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Input A = ");
-        double A = scanner.nextDouble();
-        System.out.print("Input B = ");
-        double B = scanner.nextDouble();
-        System.out.print("Input C = ");
-        double C = scanner.nextDouble();
-        System.out.print("Input R = ");
-        double R = scanner.nextDouble();
+        System.out.print("Input a = ");
+        double a = scanner.nextDouble();
+        System.out.print("Input b = ");
+        double b = scanner.nextDouble();
+        System.out.print("Input c = ");
+        double c = scanner.nextDouble();
+        System.out.print("Input r = ");
+        double r = scanner.nextDouble();
 
-        checkPossible(A, B, C, R);
-
-        if(checkExistence(A, B, C)) {
-            checkPossible (A, B, C, R);
+        if(checkExistenceOfACircle(a, b, c)) {
+            if(checkPossibilityOfTheExistence( a, b, c, r) ){System.out.println("you can enter");}
+            if (checkPossibilityOfTheExistence( a, b, c, r) == false) {System.out.println("cannot be entered");}
         } else {
-            System.out.println("Error");
+            System.out.println("the triangle can't exist");
         }
-
     }
-    public static void checkPossible(double A, double B, double C, double R) {
-        Locale.setDefault(Locale.ROOT);
-        double p, r;
+    public static boolean checkPossibilityOfTheExistence(double a, double b, double c, double r) {
+        double p, expectedR;
 
-        p = (A + B + C) / 2;
-        r = Math.sqrt(((p - A) * (p - B) * (p - C)) / p);
+        p = (a + b + c) / 2;
+        expectedR = Math.sqrt(((p - a) * (p - b) * (p - c)) / p);
 
-        if (r == R) {
-            System.out.println("you can enter");
+        if (expectedR == r) {
+            return true;
         } else {
-            System.out.println("cannot be entered");
+            return false;
         }
     }
 
-    public static boolean checkExistence(double A, double B, double C) {
-        if (A + B > C) {
-            if (A + C > B)
-                if (B + C > A )
+    public static boolean checkExistenceOfACircle(double a, double b, double c) {
+        if (a + b > c) {
+            if (a + c > b)
+                if (b + c > a )
                     return true;
         }
 
