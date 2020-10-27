@@ -16,7 +16,7 @@ public class Main {
         System.out.print("Input r = ");
         double r = scanner.nextDouble();
 
-        if (checkExistenceOfACircle(a, b, c)) {
+        if (checkExistenceOfATriangle(a, b, c)) {
             if (checkPossibilityOfTheExistence(a, b, c, r)) {
                 System.out.println("you can enter");
             }
@@ -41,7 +41,7 @@ public class Main {
         }
     }
 
-    public static boolean checkExistenceOfACircle(double a, double b, double c) {
+    public static boolean checkExistenceOfATriangle(double a, double b, double c) {
         if (a + b > c && a + c > b && b + c > a) {
             return true;
         }
