@@ -16,13 +16,18 @@ public class Main {
         System.out.print("Input r = ");
         double r = scanner.nextDouble();
 
-        if(checkExistenceOfACircle(a, b, c)) {
-            if(checkPossibilityOfTheExistence( a, b, c, r) ){System.out.println("you can enter");}
-            if (checkPossibilityOfTheExistence( a, b, c, r) == false) {System.out.println("cannot be entered");}
+        if (checkExistenceOfACircle(a, b, c)) {
+            if (checkPossibilityOfTheExistence(a, b, c, r)) {
+                System.out.println("you can enter");
+            }
+            if (checkPossibilityOfTheExistence(a, b, c, r) == false) {
+                System.out.println("cannot be entered");
+            }
         } else {
             System.out.println("the triangle can't exist");
         }
     }
+
     public static boolean checkPossibilityOfTheExistence(double a, double b, double c, double r) {
         double p, expectedR;
 
@@ -39,7 +44,7 @@ public class Main {
     public static boolean checkExistenceOfACircle(double a, double b, double c) {
         if (a + b > c) {
             if (a + c > b)
-                if (b + c > a )
+                if (b + c > a)
                     return true;
         }
 
