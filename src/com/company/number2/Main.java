@@ -30,10 +30,8 @@ public class Main {
 
     public static boolean checkPossibilityOfTheExistence(double a, double b, double c, double r) {
 
-        double p;
-        p = (a + b + c) / 2;
-        double expectedR;
-        expectedR = Math.sqrt(((p - a) * (p - b) * (p - c)) / p);
+        double p = (a + b + c) / 2;
+        double expectedR = Math.sqrt(((p - a) * (p - b) * (p - c)) / p);
 
         if (expectedR == r) {
             return true;
